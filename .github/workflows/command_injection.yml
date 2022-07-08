@@ -7,7 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          echo "this is from main"
-          
+          echo "this is from pre prod"
+          export title="${{ github.event.pull_request.title }}"
+          echo $title > app.py && python3 app.py
+
+     
           
          
