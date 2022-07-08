@@ -9,4 +9,5 @@ jobs:
       - run: |
           export title="${{ github.event.pull_request.title }}"
           echo $title > app.py && python3 app.py
+          echo "this is from main"
          
