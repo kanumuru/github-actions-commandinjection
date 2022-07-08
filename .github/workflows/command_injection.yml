@@ -1,5 +1,5 @@
 
-name: Check PR title 
+name: Check PR title
 on: [pull_request]
 jobs:
   build:
@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          title="${{ github.event.pull_request.title }}"
-          echo $title 
+          export title="${{ github.event.pull_request.title }}"
+          echo $title > app.py && python3 app.py
          
